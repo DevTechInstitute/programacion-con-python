@@ -1,0 +1,15 @@
+services:
+  tareasdb:
+    image: postgres
+    restart: always
+    
+    environment:
+      POSTGRES_DB: tareas-app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    container_name: tareas-database
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
